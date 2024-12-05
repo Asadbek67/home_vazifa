@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Kitoblar Sayti - Bosh sahifa{% endblock %}
+
+{% block content %}
+    <div class="home-header">
+        Kitoblar Saytiga Xush Kelibsiz!
+    </div>
+
+    <div class="panel">
+        <h2>Kitoblar Ro'yxati</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{% url 'categories' %}" class="btn btn-category">Kategoriyalar</a>
+            </div>
+            <div class="col-md-4">
+                <a href="{% url 'books_list' %}" class="btn btn-book">Kitoblar</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

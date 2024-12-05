@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }} - Batafsil{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1>{{ book.title }}</h1>
+        <p><strong>Muallif:</strong> {{ book.author }}</p>
+        <p><strong>Janr:</strong> {{ book.genre }}</p>
+        <p><strong>Nashr sanasi:</strong> {{ book.publication_date }}</p>
+        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+        <p><strong>Kategoriyasi:</strong> {{ book.category.name }}</p>
+
+        {% if book.summary %}
+            <h3>Qisqacha ma'lumot:</h3>
+            <p>{{ book.summary }}</p>
+        {% endif %}
+
+        <a href="{% url 'book_by_category' book.category.id %}" class="btn btn-primary">Kategoriya bo'yicha qaytish</a>
+    </div>
+</div>
+{% endblock %}

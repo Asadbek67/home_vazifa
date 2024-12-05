@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }} Kategoriyasidagi Kitoblar{% endblock %}
+
+{% block content %}
+    <h1>{{ category.name }} Kategoriyasidagi Kitoblar</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} - {{ book.genre }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Bosh sahifaga qaytish</a>
+{% endblock %}
